@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+    />
+
+    <!-- Font -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Style -->
+    <link rel="stylesheet" href="style.css" />
+
+    <title>Elements randomizer</title>
+  </head>
+
+  <body>
+    <div id="elements-container"></div>
+
+    <div class="center">
+      <button id="generate-element-button">
+        <i class="fas fa-play"></i>
+      </button>
+
+      <p>PRESS ENTER TO GENERATE</p>
+    </div>
+
+    <audio controls autoplay loop preload="auto" id="song" type="audio/mp3">
+      <source src="./sounds/Trancyvania.mp3" type="audio/mp3" />
+      <source src="./sounds/8-Bit-Mayhem.mp3" type="audio/mp3" />
+      Your browser does not support the audio element.
+    </audio>
+
+    <script src="index.js"></script>
+  </body>
+</html>
