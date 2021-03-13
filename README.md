@@ -31,6 +31,17 @@ Nesse desafio o objetivo era criar uma interface onde o usuário possa clicar em
 
 ---
 
+## 🚀 Tecnologias utilizadas
+
+Tecnologias que utilizem para resolução desse desafio.
+
+- HTML5
+- CSS3
+- Javascript
+- Netlify
+
+---
+
 🎵 Música que escutei enquando fiz o **Challenge**: 😜 [Indie/Rock/Alternative Compilation - January 2021
 ](https://www.youtube.com/watch?v=WJ6UOey1apk)
 
