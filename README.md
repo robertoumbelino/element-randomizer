@@ -24,7 +24,7 @@ Nesse desafio o objetivo era criar uma interface onde o usuário possa clicar em
 ✅ Objetivos a serem alcançados. 
 - Deve ser possível gerar uma bolinha.
 - Deve ser possível gerar uma cor aleatória.
-- Deve ser possível gerar um tamnho.aleatório.
+- Deve ser possível gerar um tamanho aleatório.
 - Deve ser possível gerar uma velocidade aleatória.
 - Deve ser possível gerar uma direção aleatória.
 - Deve seguir os princípios de colisão da física.
