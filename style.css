@@ -80,6 +80,7 @@ p {
   font-size: 26px;
   text-align: center;
   margin-top: 20px;
+  line-height: 1.5;
 
   transform: scale(1);
   animation: pulse 0.5s infinite;
