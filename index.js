@@ -2,7 +2,7 @@
  * Defining elements.
  */
 const song = document.getElementById('song')
-const bodyRect = document.body.getBoundingClientRect()
+let bodyRect = document.body.getBoundingClientRect()
 const elementsContainer = document.getElementById('elements-container')
 
 /**
@@ -45,7 +45,13 @@ const generateElement = () => {
   /**
    * Play song.
    */
-  song.play()
+  if (song.paused) song.play()
+
+  /**
+   * Play sound to new element.
+   */
+  const newElementSound = new Audio('./sounds/new.mp3')
+  newElementSound.play()
 
   /**
    * Create an element.
@@ -150,3 +156,11 @@ document
 document.body.addEventListener('keyup', ({ key }) => {
   if (key === 'Enter') generateElement()
 })
+
+/**
+ * Update body dimensions.
+ */
+window.addEventListener(
+  'resize',
+  () => (bodyRect = document.body.getBoundingClientRect())
+)

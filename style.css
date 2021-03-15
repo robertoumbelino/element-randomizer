@@ -61,6 +61,10 @@ button {
   transform: scale(1);
 }
 
+*:focus {
+  outline: 0 !important;
+}
+
 button > i {
   font-size: 46px;
   color: #e4e4e4;
