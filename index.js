@@ -3,6 +3,7 @@
  */
 const song = document.getElementById('song')
 let bodyRect = document.body.getBoundingClientRect()
+const counter = document.getElementById('counter')
 const elementsContainer = document.getElementById('elements-container')
 
 /**
@@ -52,6 +53,11 @@ const generateElement = () => {
    */
   const newElementSound = new Audio('./sounds/new.mp3')
   newElementSound.play()
+
+  /**
+   * Increase counter.
+   */
+  counter.innerHTML = +counter.innerHTML + 1
 
   /**
    * Create an element.

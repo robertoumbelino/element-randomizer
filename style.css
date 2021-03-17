@@ -41,6 +41,7 @@ div.center {
   align-items: center;
   flex-direction: column;
   justify-content: center;
+  z-index: 2;
 }
 
 button {
@@ -88,6 +89,12 @@ p {
 
   transform: scale(1);
   animation: pulse 0.5s infinite;
+}
+
+.center > span {
+  font-size: 46px;
+  color: #e4e4e4;  
+  margin-bottom: 30px;
 }
 
 .circle {
