@@ -4,9 +4,21 @@
 
 <h1 align="center">Element Randomizer</h1>
 
+<p align="center">
+  <a href="https://www.linkedin.com/in/roberto-umbelino-478403151/" alt="LinkedIn">
+    <img src="https://img.shields.io/badge/linkedin-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white" />
+  </a>  
+
+  <a href="https://www.instagram.com/roberto.ubl/" alt="Instagram">
+    <img src="https://img.shields.io/badge/instagram-%23E4405F.svg?&style=for-the-badge&logo=instagram&logoColor=white" />
+  </a>
+</p>
+
 <h2 align="center">
   💻 <a href="https://element-randomizer.netlify.app/">Preview</a>
 </h2>
+
+![Screen](.github/screen.gif)
 
 
 ## 🎯 Challenge
@@ -39,6 +51,11 @@ Tecnologias que utilizem para resolução desse desafio.
 - CSS3
 - Javascript
 - Netlify
+
+![HTML](https://img.shields.io/badge/html5%20-%23E34F26.svg?&style=for-the-badge&logo=html5&logoColor=white)
+![CSS](https://img.shields.io/badge/css3%20-%231572B6.svg?&style=for-the-badge&logo=css3&logoColor=white)
+![Javascript](https://img.shields.io/badge/javascript-%23F7DF1E.svg?&style=for-the-badge&logo=javascript&logoColor=black)
+![Netlify](https://img.shields.io/badge/netlify%20-00C7B7.svg?&style=for-the-badge&logo=netlify&logoColor=white)
 
 ---
 
