@@ -1,7 +1,9 @@
 /**
- * Defining elements.
+ * Pipe function.
+ * Amazing.
  */
-const song = document.getElementById('song')
+const pipe = (...fns) => x => fns.reduce((v, f) => f(v), x)
+
 let bodyRect = document.body.getBoundingClientRect()
 const counter = document.getElementById('counter')
 const elementsContainer = document.getElementById('elements-container')
@@ -40,34 +42,60 @@ const generateRandomHexadecimalColor = () => {
 }
 
 /**
- * Generate an element.
+ * Setup.
  */
-const generateElement = () => {
-  /**
-   * Play song.
-   */
-  if (song.paused) song.play()
+const setup = () => ({})
 
-  /**
-   * Play sound to new element.
-   */
+/**
+ * Play song.
+ */
+const playSong = data => {
+  const song = document.getElementById('song')
+  if (song.paused) song.play()
+  return data
+}
+
+/**
+ * Play sound to new element.
+ */
+const playNewElementSoundEffect = data => {
   const newElementSound = new Audio('./sounds/new.mp3')
   newElementSound.play()
+  return data
+}
 
-  /**
-   * Increase counter.
-   */
+/**
+ * Increase counter quantity.
+ */
+const increaseCounter = data => {
   counter.innerHTML = +counter.innerHTML + 1
+  return data
+}
 
-  /**
-   * Create an element.
-   */
-  const element = document.createElement('div')
+/**
+ * Set is poop.
+ */
+const setIsPoop = data => {
+  const isPoop = +counter.innerHTML % 5 === 0
+  return { ...data, isPoop }
+}
 
-  /**
-   * Randomize a size from element.
-   */
+/**
+ * Randomize a size from element.
+ */
+const generateSize = data => {
   const size = randomizeNumber(50, 20)
+  return { ...data, size }
+}
+
+/**
+ * Create a element.
+ */
+const createElement = data => {
+  /**
+   * Extract values.
+   */
+  const { size, isPoop } = data
 
   /**
    * Get a random color.
@@ -83,6 +111,28 @@ const generateElement = () => {
    * Defining styles from element.
    */
   const sizeInPx = formatToPx(size)
+
+  /**
+   * Create an element.
+   */
+  const element = document.createElement('div')
+
+  if (isPoop) {
+    element.innerHTML = '<i class="fas fa-poo"></i>'
+    element.className = ''
+    element.style.color = '#654321'
+    element.style.position = 'absolute'
+    element.style.fontSize = sizeInPx
+
+    /**
+     * Defining a random position to start.
+     */
+    element.style.top = formatToPx(randomizeNumber(bodyRect.height))
+    element.style.left = formatToPx(randomizeNumber(bodyRect.width))
+
+    return { ...data, element }
+  }
+
   element.className = randomElementFormat
   element.style.width = sizeInPx
   element.style.height = sizeInPx
@@ -90,6 +140,7 @@ const generateElement = () => {
   element.style.backgroundColor = randomHexadecimalColor
 
   const isTriangle = randomElementFormat === elementFormats[2]
+
   if (isTriangle) {
     element.style.borderLeftWidth = formatToPx(size / 2)
     element.style.borderRightWidth = formatToPx(size / 2)
@@ -103,22 +154,51 @@ const generateElement = () => {
   element.style.top = formatToPx(randomizeNumber(bodyRect.height))
   element.style.left = formatToPx(randomizeNumber(bodyRect.width))
 
+  return { ...data, element }
+}
+
+/**
+ * Append element in screen.
+ */
+const appendElement = data => {
   /**
-   * Append element in screen.
+   * Extract values.
    */
+  const { element } = data
+
   elementsContainer.appendChild(element)
+  return data
+}
 
-  /**
-   * Moviment axis in screen from element.
-   */
-  const axis = { x: MOVIMENT.RIGHT, y: MOVIMENT.DOWN }
+/**
+ * Moviment axis in screen from element.
+ */
+const setRandomAxis = data => {
+  const randomX = randomizeNumber(2, 1) === 2 ? MOVIMENT.RIGHT : MOVIMENT.LEFT
+  const randomY = randomizeNumber(2, 1) === 2 ? MOVIMENT.DOWN : MOVIMENT.UP
+  const axis = { x: randomX, y: randomY }
 
-  /**
-   * Randomize a speed from element.
-   */
+  return { ...data, axis }
+}
+
+/**
+ * Randomize a speed from element.
+ */
+const setSpeed = data => {
   const speed = randomizeNumber(2)
+  return { ...data, speed }
+}
 
-  setInterval(() => {
+/**
+ * Looping element.
+ */
+const generateElementLooping = data => {
+  /**
+   * Extract values.
+   */
+  const { axis, element, speed, isPoop, size } = data
+
+  const interval = setInterval(() => {
     /**
      * Extract values.
      */
@@ -142,14 +222,53 @@ const generateElement = () => {
     element.style.left = `${newLeft}px`
 
     /**
+     * Collision.
+     */
+    const isCollidedTop = rect.top <= 0
+    const isCollidedLeft = rect.left <= 0
+    const isCollidedBottom = rect.top >= bodyRect.height - size
+    const isCollidedRigth = rect.left >= bodyRect.width - size
+
+    /**
+     * Is stop interval.
+     */
+    const isStopInterval =
+      isPoop &&
+      (isCollidedTop || isCollidedLeft || isCollidedBottom || isCollidedRigth)
+
+    /**
+     * Stop interval becase the poop collided in the wall
+     */
+    if (isStopInterval) return clearInterval(interval)
+
+    /**
      * Validation to change axis.
      */
-    if (rect.top <= 0) axis.y = MOVIMENT.DOWN
-    if (rect.left <= 0) axis.x = MOVIMENT.RIGHT
-    if (rect.top >= bodyRect.height - size) axis.y = MOVIMENT.UP
-    if (rect.left >= bodyRect.width - size) axis.x = MOVIMENT.LEFT
+    if (isCollidedTop) axis.y = MOVIMENT.DOWN
+    if (isCollidedLeft) axis.x = MOVIMENT.RIGHT
+    if (isCollidedBottom) axis.y = MOVIMENT.UP
+    if (isCollidedRigth) axis.x = MOVIMENT.LEFT
   }, 1)
+
+  return data
 }
+
+/**
+ * Generate an element.
+ */
+const runElement = pipe(
+  setup,
+  playSong,
+  playNewElementSoundEffect,
+  increaseCounter,
+  setIsPoop,
+  generateSize,
+  createElement,
+  appendElement,
+  setRandomAxis,
+  setSpeed,
+  generateElementLooping
+)
 
 /**
  * Click event from button.
@@ -157,10 +276,10 @@ const generateElement = () => {
  */
 document
   .getElementById('generate-element-button')
-  .addEventListener('click', generateElement)
+  .addEventListener('click', runElement)
 
 document.body.addEventListener('keyup', ({ key }) => {
-  if (key === 'Enter') generateElement()
+  if (key === 'Enter') runElement()
 })
 
 /**
