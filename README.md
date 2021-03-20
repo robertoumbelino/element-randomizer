@@ -43,6 +43,21 @@ Nesse desafio o objetivo era criar uma interface onde o usuário possa clicar em
 
 ---
 
+## 💪 Diferencial
+
+Como é de praxe em todos os _challenges_ há um _plus_, implementações adicionais que estão fora do escopo, as minhas foram as seguintes.
+
+<br/>
+
+✅ Implementações extras. 
+- Múscia de fundo.
+- Efeitos sonoros.
+- Randomização de elementos, além de **bolinhas**. (Triângulo, Círculo, Quadrado).
+- Contador de elementos na tela.
+- Disparar elementos pelo teclado.
+
+---
+
 ## 🚀 Tecnologias utilizadas
 
 Tecnologias que utilizem para resolução desse desafio.
