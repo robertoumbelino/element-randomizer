@@ -7,7 +7,7 @@
 <p align="center">
   <a href="https://www.linkedin.com/in/roberto-umbelino-478403151/" alt="LinkedIn">
     <img src="https://img.shields.io/badge/linkedin-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white" />
-  </a>  
+  </a>
 
   <a href="https://www.instagram.com/roberto.ubl/" alt="Instagram">
     <img src="https://img.shields.io/badge/instagram-%23E4405F.svg?&style=for-the-badge&logo=instagram&logoColor=white" />
@@ -19,7 +19,6 @@
 </h2>
 
 ![Screen](.github/screen.gif)
-
 
 ## 🎯 Challenge
 
@@ -33,7 +32,8 @@ Nesse desafio o objetivo era criar uma interface onde o usuário possa clicar em
 
 <br/>
 
-✅ Objetivos a serem alcançados. 
+✅ Objetivos a serem alcançados.
+
 - Deve ser possível gerar uma bolinha.
 - Deve ser possível gerar uma cor aleatória.
 - Deve ser possível gerar um tamanho aleatório.
@@ -49,12 +49,14 @@ Como é de praxe em todos os _challenges_ há um _plus_, implementações adicio
 
 <br/>
 
-✅ Implementações extras. 
+✅ Implementações extras.
+
 - Múscia de fundo.
 - Efeitos sonoros.
 - Randomização de elementos, além de **bolinhas**. (Triângulo, Círculo, Quadrado).
 - Contador de elementos na tela.
 - Disparar elementos pelo teclado.
+- Gerado um 💩 a cada **5** _clicks_, com uma física diferente, quando bate na parede ele fica grudado.
 
 ---
 
@@ -78,6 +80,5 @@ Tecnologias que utilizem para resolução desse desafio.
 ](https://www.youtube.com/watch?v=WJ6UOey1apk)
 
 Você pode ver o resultado final aqui: [Preview](https://element-randomizer.netlify.app/).
-
 
 by [Roberto Umbelino](https://github.com/robertoumbelino)
