@@ -254,7 +254,7 @@ const generateElementLooping = data => {
 }
 
 /**
- * Generate an element.
+ * Cycle element.
  */
 const runElement = pipe(
   setup,
