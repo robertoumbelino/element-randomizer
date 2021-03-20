@@ -59,7 +59,7 @@ button {
   border: none;
   border-radius: 50%;
 
-  background-color: #f15076;  
+  background-color: #f15076;
 
   transform: scale(1);
 }
@@ -93,15 +93,22 @@ p {
 
 .center > span {
   font-size: 46px;
-  color: #e4e4e4;  
+  color: #e4e4e4;
   margin-bottom: 30px;
 }
 
+.square {
+  opacity: 0.8;
+}
+
 .circle {
+  opacity: 0.8;
   border-radius: 50%;
 }
 
 .triangle {
+  opacity: 0.8;
+
   width: 0 !important;
   height: 0 !important;
   background: transparent !important;
