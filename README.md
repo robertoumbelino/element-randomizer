@@ -56,7 +56,7 @@ Como é de praxe em todos os _challenges_ há um _plus_, implementações adicio
 - Randomização de elementos, além de **bolinhas**. (Triângulo, Círculo, Quadrado).
 - Contador de elementos na tela.
 - Disparar elementos pelo teclado.
-- Gerado um 💩 a cada **5** _clicks_, com uma física diferente, quando bate na parede ele fica grudado.
+- Gerado um 💩 a cada **5** _clicks_, com uma física diferente, quando colide na parede ele fica grudado.
 
 ---
 
