@@ -60,6 +60,43 @@ Como é de praxe em todos os _challenges_ há um _plus_, implementações adicio
 
 ---
 
+### 📚 Novos conhecimentos
+
+Por mais mínimo que seja o projeto, sempre será aprendido algo novo, e nesse projeto o que adquiri de conhecimento foi:
+
+<br/>
+
+#### #️⃣ **getBoundingClientRect**
+
+**Sobre**:
+Uma função do **DOM API** que tem como objetivo retornar o tamanho de um elemento e sua posição relativa ao _viewport_.
+
+**Uso**: Utilizado para identificar onde cada elemento estava posicionado para poder realizar o "movimento" e "direção" dos elementos. 
+
+**Para mais informação** [Acesse aqui](https://developer.mozilla.org/pt-BR/docs/Web/API/Element/getBoundingClientRect).
+
+#### #️⃣ **new Audio**
+
+**Sobre**:
+É uma classe utilizada para construir e retornar um novo **HTMLAudioElement**, dessa forma podendo realizar os controles da tag de _audio_.
+
+**Uso**:
+Para realizar os efeitos sonoros referente aos elementos em tela.
+
+**Para mais informação** [Acesse aqui](https://developer.mozilla.org/en-US/docs/Web/API/HTMLAudioElement/Audio).
+
+#### #️⃣ **-webkit-tap-highlight-color**
+
+**Sobre**:
+É uma propriedade do **CSS** para definir uma cor de _highlight_ que aparece sobre um elemento que foi clicado. Essa _feature_ ainda não faz parte dos recursos padrões do **CSS** e ainda não se deve utilizar em produção.
+
+**Uso**:
+Para remover a cor de _highlight_ do botão de _play_ na versão _mobile_.
+
+**Para mais informação** [Acesse aqui](https://developer.mozilla.org/en-US/docs/Web/CSS/-webkit-tap-highlight-color).
+
+---
+
 ## 🚀 Tecnologias utilizadas
 
 Tecnologias que utilizem para resolução desse desafio.
